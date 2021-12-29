@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Test00 : MonoBehaviour
 {
     public int age = 24;
     public float height1 = 156.8f;
