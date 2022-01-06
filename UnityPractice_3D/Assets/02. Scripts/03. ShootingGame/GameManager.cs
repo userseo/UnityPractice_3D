@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public Image overPanel;
 
-    private bool isGameOver;
+    public bool isGameOver;
 
     //게임의 종료 여부를 저장할 프로퍼티
     public bool IsGameOver
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    IEnumerator GameOver()
+    public IEnumerator GameOver()
     {
         
         float fadeCount = 0; //처음 알파값
@@ -66,4 +66,5 @@ public class GameManager : MonoBehaviour
             overPanel.color = new Color(0, 0, 0, fadeCount);
         }
     }
+
 }

@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float speed = 5.0f;
     public GameObject bullet;
 
+
     void Start()
     {
     }
@@ -45,13 +46,8 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnDisable()
     {
-        if (other.gameObject.CompareTag("ENEMY"))
-        {
-
-            GameManager.instance.IsGameOver = true;
-            Destroy(gameObject);
-        }
+        GameManager.instance.IsGameOver = true;
     }
 }

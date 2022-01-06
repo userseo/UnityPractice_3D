@@ -33,8 +33,6 @@ public class EnemyFSM : MonoBehaviour
             dir = Vector3.down;
         }
 
-        //과도한 클론을 방지하기 위해 3초가 지나면 삭제
-        Destroy(gameObject, 3.0f);
     }
 
     void Update()
@@ -46,19 +44,11 @@ public class EnemyFSM : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("BULLET"))
-        {
-            //부딪힌 오브젝트 파괴
-            Destroy(other.gameObject);
 
-            //이 게임 오브젝트 파괴
-            Destroy(gameObject);
-        }
-        else if(other.gameObject.CompareTag("PLAYER"))
-        {
-            //이 게임 오브젝트 파괴
-            Destroy(gameObject);
-        }
+        //부딪힌 오브젝트 파괴
+        Destroy(other.gameObject);
 
+        //이 게임 오브젝트 파괴
+        Destroy(gameObject);
     }
 }
