@@ -7,9 +7,10 @@ public class PlayerMove : MonoBehaviour
     public float speed = 5.0f;
     public GameObject bullet;
 
-
+    AudioSource aSource;
     void Start()
     {
+        aSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,6 +39,7 @@ public class PlayerMove : MonoBehaviour
 
     void Fire()
     {
+        aSource.Play();
         Vector3 firePos = transform.position;
         firePos.y += 0.5f;
         Instantiate(bullet, firePos, Quaternion.identity);

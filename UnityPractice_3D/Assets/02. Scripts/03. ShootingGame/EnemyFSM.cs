@@ -10,6 +10,8 @@ public class EnemyFSM : MonoBehaviour
     public GameObject target;
     Vector3 dir;
 
+    public GameObject explisionPrefab;
+
     void Start()
     {
 
@@ -44,6 +46,8 @@ public class EnemyFSM : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        //Æø¹ß È¿°ú »ý¼º
+        GameObject explostion = Instantiate(explisionPrefab, transform.position, Quaternion.identity);
 
         //ºÎµúÈù ¿ÀºêÁ§Æ® ÆÄ±«
         Destroy(other.gameObject);
